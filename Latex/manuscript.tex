@@ -16,7 +16,12 @@
 \usepackage{hyperref}
 \usepackage{enumerate} %para gerar listas numeradas
 \usepackage{graphicx}  %para figuras eps
+\usepackage{float}
 \usepackage{subfigure} %para figuras múltimas, com (a), (b), (c), etc.
+%\usepackage[colorlinks = true, linkcolor = black, urlcolor  = blue, citecolor = blue, anchorcolor = blue]{hyperref}
+\usepackage{url}%acrescenta url´s
+\usepackage{indentfirst}
+\usepackage{booktabs} % To thicken table lines
 
 % os dois comandos estão com problema e deverão ser
 % corrigidos futuramente
@@ -26,21 +31,21 @@
 \begin{document}
 
   % Título em português
-  \title{Título}
+  \title{Apendizado de máquina no reconhecimento de padrões litológicos}
   
   % Título em inglês
-  \foreigntitle{Title}
+  \foreigntitle{Machine learning in the recognition of lithological patterns}
   
   % Autor
-  \author{Nome do(a) Autor(a)}{Sobrenome}
+  \author{Victor Ribeiro}{Carreira}
 
   % Orientador(a)
-  \advisor{Dra.}{Nome da orientadora}{Sobrenome}
-  %\advisor{Dr.}{Nome do orientador}{Sobrenome}
+  %\advisor{Dra.}{Nome da orientadora}{Sobrenome}
+  \advisor{Dr.}{Cosme F. Neto,}{Ponte}
 
   % Co-orientadores (pode ser mais de um)
-  \coadvisor{Dra.}{Nome da Co-orientadora}{Sobrenome}
-  \coadvisor{Dr.}{Nome do Co-orientador}{Sobrenome}
+  %\coadvisor{Dra.}{Nome da Co-orientadora}{Sobrenome}
+  %\coadvisor{Dr.}{Nome do Co-orientador}{Sobrenome}
 
   % Examinadores (caso seja um relatório, não modifique as linhas "\examiner")
   \examiner{Dra.}{Nome da Examinadora}{Sobrenome}
@@ -54,7 +59,7 @@
   %\program{ASTRO}
   
   % Data (mês e ano)
-  \date{03}{2017}
+  \date{09}{2017}
 
   % Palavras-chave
   \keyword{Primeira palavra-chave}
@@ -70,8 +75,8 @@
   %\include{dedic}  % dedicatória
   %\include{thanks} % agradecimentos
   
-  \include{resumo}   % resumo em português - deve ser utilizado por todos os tipos de documento
-  \include{abstract} % resumo em inglês - deve ser utilizado por todos os tipos de documento
+  %\include{resumo}   % resumo em português - deve ser utilizado por todos os tipos de documento
+  %\include{abstract} % resumo em inglês - deve ser utilizado por todos os tipos de documento
   \tableofcontents   % sumário - deve ser utilizado por todos os tipos de documento
   \listoffigures     % lista de figuras
   \listoftables      % lista de tabelas
@@ -98,6 +103,7 @@
   \backmatter
 
   % estilo de citações por ordem alfabética (defaut da classe ONTeX)
+  %\bibliographystyle{apalike}
   \bibliographystyle{on-plain}
   \bibliography{references}
 
