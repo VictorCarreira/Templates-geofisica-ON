@@ -86,11 +86,11 @@ Em \citet{Telford_1993}, encontram-se variações das propriedades físicas dos 
 %FALAR DO TRATAMENTO DO DADO, DO NEURÔNIO, DA GEOMETRIA DA REDE, DO TREINO, DA FUNÇÃO DE ATIVAÇÃO, CAMADAS OCULTAS, PESOS.%
  
 
-\section{Modelo}
+\section{Modelo proposto para gerar os dados sintéticos}
 
 O modelo proposto para o teste da rede neuronal foi concebido com base em um modelo geológico esquemático proposto por  \citet{Sal2008} \textit{apud} \citep{Eiras1996}. Esta simplificação reproduz, em uma bacia do tipo sinéclise, estruturas geológicas como Horts, Grábens, semi-grábens, falhas normais, reversas. E representa ainda processos halocinéticos referenciados por \cite{Eiras1996}.
 
-A Fig. \ref{modelo} representa o modelo em tratado anteriormente. 
+A Fig. \ref{modelo} representa o modelo em tratado anteriormente. A caixa aumentativa evidencia a falha normal, representada no dado de poço por um contato não plano-paralelo.
 
 \begin{figure}[H]
 	\centering
@@ -107,7 +107,7 @@ A partir da Fig. \ref{modelo} foram gerados três poços, na parte SW do perfil,
 
 Os poços simulam diferentes padrões interpretativos usuais da ciência de perfilagem \footnote{Padrões usuais reconhecido por intérpretes geralmente associados a horizontes de interesse. Esses padrões são identificados como padrões sinos, sinos invertidos, serra e caixa.}. O poço denominado T$1$ \footnote{T$1$: poço escolhido para treinar a rede neuronal.} se localiza entre os poços C$1$ e C$2$ atravessando uma falha normal. 
 
-A Fig. \ref{T1} apresenta os dados do poço T1. As espessuras das camadas são de $800$ m de embasamento, $2$ km de uma mistura crescente entre conglomerado e embasamento, perfazendo um padrão sino nos dados de perfilagem, $2$ km de conglomerado, $1$ km de dolomita (pacote inferior), $300$ m de diabásio, $400$ m de dolomita (pacote superior), $600$ m de folhelho $2$. 
+A Fig. \ref{T1} apresenta os dados do poço T1. As espessuras das camadas são de $800$ m de embasamento, $2$ km de uma mistura crescente entre conglomerado e embasamento, perfazendo um padrão sino nos dados de perfilagem, $2$ km de conglomerado, $1$ km de dolomita (pacote inferior), $300$ m de diabásio, $400$ m de dolomita (pacote superior), $600$ m de folhelho $2$. A falha foi representada por uma função linear da variação de profundidade por propriedade física de uma mistura crescente de conglomerado e embasamento.
 
 \begin{figure}[H]
 	\centering
@@ -116,7 +116,7 @@ A Fig. \ref{T1} apresenta os dados do poço T1. As espessuras das camadas são d
 	\fbox{
 		\includegraphics[scale=0.5]{Imagens/PocoT1.png}
 	}
-	\caption{Dado de perfilagem sintético, T1.}
+	\caption{Dado de perfilagem sintético, T1. Aonde a porcentagem de CE indica a mistura de conglomerado com embasamento}
 	\label{T1}
 \end{figure}
 
