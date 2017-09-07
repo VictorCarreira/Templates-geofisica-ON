@@ -52,40 +52,12 @@ Onde $\beta$ é o parâmetro de inclinação. A Fig. \ref{Esquematico de McCullo
 
 Mais de $50$ tipos de redes neurais artificiais tem sido criadas até o ano de $2014$ \citep{Saljooghi2014}.
 
-\section{Redes com aprendizado não-supervisionado}
 
-Nesta categoria de RNA's são apenas inseridos os valores de atributos de entrada. Os valores de saída são definidos pela própria rede que passa por um processo de treinamento não supervionado. As redes que são submetidas a este tipo de treinamento são mais indicadas para tarefas aonde são exigidos agrupamento de dados (\textit{Clustering}). Neste processo uma classe deve ser atribuída aos registros da rede observando-se apenas o comportamento de seus atributos, no caso em particular deste trabalho tratam-se de propriedades geofísicas.
+\section{A Rede de Kohonen}
 
-Uma rede com treinamento não supervisionado inspira-se no funcionamento do córtex cerebral. Neste modelo biológico, o organismo aprende a realizar alguma tarefa, por meio da identificação de padrões. Por exemplo, ao identificar uma música determinados padrões sonoros que compõe o conjunto harmonioso de notas precisam ser aprendidos antes de serem reconhecidos. Durante este processo, regiões específicas do cérebro vão sendo paulatinamente acionadas. Isto somente é possível, devido conexões específicas que são formadas entre os neurônios
-presentes no córtex, Fig. \ref{homunculo}.
+Neste trabalho utilizamos a rede de kohonen. Esta rede neuronal tem como importante característica ser uma rede com aprendizado não-supervisionado. Logo o espaço de soluções da saída da rede não são conhecidos. 
 
-Os detalhes dos processos que regulam o córtex ainda não foram totalmente elucidados, contudo é seguro assumir que a primeira representação dos fenômenos que aprendemos, no mundo, pode ser representado por uma superfície topológica.  
-
-\begin{figure}[H]
-	\centering
-	\setlength{\fboxsep}{8pt}
-	\setlength{\fboxrule}{0.1pt}
-	\fbox{
-		\includegraphics[scale=0.5]{Imagens/homunculo.png}
-	}
-	\caption{Homúnculo de Penfield.}
-	\label{homunculo}
-\end{figure}
-
-Um cérebro que sofreu uma comossão grave perde a capacidade de acessar
-determinadas zonas do homúnulo responsáveis por atividades específicas. Contudo
-o cérebro tem a capacidade de destinar outras regiões para o controle destas
-ações que foram previamente perdidas.
-
-Além de casos graves como um acidente o cérebro também perde a capacidade de
-aprendizado com o tempo. Em humanos, a capacidade de aprendizado vai da pequena
-infância até a puberdade. Após este período, o cérebro passar a reter o que fora
-aprendido. Sendo assim o aprendizado é uma função que depende, entre outras
-coisas, do tempo.
-
-\subsection{A Rede de Kohonen}
-
-A localização espacial de um neurônio da saída em um mapa topográfico
+A localização espacial de um neurônio da saída em um mapa topológico
 corresponde a um domínio ou característica particular do dado retirado do espaço
 de entrada. E estas entradas são mapeadas de forma ordenada, a exemplo dos mapas
 cito-arqueturais do córtex cerebral.
@@ -129,3 +101,33 @@ d(t)= \sum^{n}_{i=1}[x(t)-w_{i,j}(t)]^{2}
 \label{euclidiana}
 \end{eqnarray}
 
+\section{Redes com aprendizado não-supervisionado}
+
+Nesta categoria de RNA's são apenas inseridos os valores de atributos de entrada. Os valores de saída são definidos pela própria rede que passa por um processo de treinamento não supervionado. As redes que são submetidas a este tipo de treinamento são mais indicadas para tarefas aonde são exigidos agrupamento de dados (\textit{Clustering}). Neste processo uma classe deve ser atribuída aos registros da rede observando-se apenas o comportamento de seus atributos, no caso em particular deste trabalho tratam-se de propriedades geofísicas.
+
+Uma rede com treinamento não supervisionado inspira-se no funcionamento do córtex cerebral. Neste modelo biológico, o organismo aprende a realizar alguma tarefa, por meio da identificação de padrões. Por exemplo, ao identificar uma música determinados padrões sonoros que compõe o conjunto harmonioso de notas precisam ser aprendidos antes de serem reconhecidos. Durante este processo, regiões específicas do cérebro vão sendo paulatinamente acionadas. Isto somente é possível, devido conexões específicas que são formadas entre os neurônios
+presentes no córtex, Fig. \ref{homunculo}.
+
+Os detalhes dos processos que regulam o córtex ainda não foram totalmente elucidados, contudo é seguro assumir que a primeira representação dos fenômenos que aprendemos, no mundo, pode ser representado por uma superfície topológica.  
+
+\begin{figure}[H]
+	\centering
+	\setlength{\fboxsep}{8pt}
+	\setlength{\fboxrule}{0.1pt}
+	\fbox{
+		\includegraphics[scale=0.5]{Imagens/homunculo.png}
+	}
+	\caption{Homúnculo de Penfield.}
+	\label{homunculo}
+\end{figure}
+
+Um cérebro que sofreu uma comossão grave perde a capacidade de acessar
+determinadas zonas do homúnulo responsáveis por atividades específicas. Contudo
+o cérebro tem a capacidade de destinar outras regiões para o controle destas
+ações que foram previamente perdidas.
+
+Além de casos graves como um acidente o cérebro também perde a capacidade de
+aprendizado com o tempo. Em humanos, a capacidade de aprendizado vai da pequena
+infância até a puberdade. Após este período, o cérebro passar a reter o que fora
+aprendido. Sendo assim o aprendizado é uma função que depende, entre outras
+coisas, do tempo.
