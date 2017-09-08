@@ -55,12 +55,10 @@ Mais de $50$ tipos de redes neurais artificiais tem sido criadas até o ano de $
 
 \section{A Rede de Kohonen}
 
-Neste trabalho utilizamos a rede de kohonen. Esta rede neuronal tem como importante característica ser uma rede com aprendizado não-supervisionado. Logo o espaço de soluções da saída da rede não são conhecidos. 
+Neste trabalho utilizamos a rede de kohonen. Esta rede neuronal tem como importante característica ser uma rede com aprendizado não-supervisionado. Logo o espaço solução de saída da rede não é conhecido. 
 
 A localização espacial de um neurônio da saída em um mapa topológico
-corresponde a um domínio ou característica particular do dado retirado do espaço
-de entrada. E estas entradas são mapeadas de forma ordenada, a exemplo dos mapas
-cito-arqueturais do córtex cerebral.
+corresponde a um domínio ou característica particular do dado retirado do espaço de entrada. E estas entradas são mapeadas de forma ordenada, a exemplo dos mapas cito-arqueturais do córtex cerebral.
 
 Neste processo de identificação de padrões a redundância torna-se impreterível,
 pois o neurônio da camada de saída que apresentar a maior resposta terá os seus
@@ -72,9 +70,7 @@ adequado. Esta teoria é baseada na suposição de que as células nervosas
 corticais estão organizadas anatomicamente em relação aos estímulos que recebem
 dos sensores aos quais estão ligadas \citep{Artero2009}.
 
-Este modelo exige a definição de vizinhança entre neurônios de forma geométrica.
-Alguns arranjos são comumente utilizados, como por exemplo, os arranjos
-triangulares, hexagonal, retangulares, etc.
+Este modelo exige a definição de vizinhança entre neurônios de forma geométrica. Alguns arranjos são comumente utilizados, como por exemplo, os arranjos triangulares, hexagonal, retangulares, etc.
 
 No caso de arranjos retangulares, diferentes vizinhanças de um neurônio
 $N_{i,j}$ podem ser configuradas em quartetos, diagonais e octetos. 
@@ -100,6 +96,15 @@ Durante a etapa de treinamento é identificado o neurônio que tem os parâmetro
 d(t)= \sum^{n}_{i=1}[x(t)-w_{i,j}(t)]^{2}
 \label{euclidiana}
 \end{eqnarray}
+
+A etapa de treinamento da rede se dá por um ajuste de pesos entre os neurônios através do cálculo do menor valor de $d(t)$ na iteração $t$, caracterizando assim o neurônio que passar por esse processo de \textit{vencedor}. Esse procedimento ajusta da mesma forma os pesos do neurônio da vizinhança dentro do raio de um quadrante. Os pesos são ajustados co uma fração da diferença entre as entradas $x_{i}$ e os pesos $w_{i}$, vide Eq.\ref{ajuste de pesos}.
+
+\begin{equation}
+w_{i,j}(t+1)=w_{i,j}(t)+n(t)[x(t)-w_{i,j}]
+\label{ajuste de pesos}
+\end{equation}
+
+Através deste ajuste continuado de pesos os elementos do conjunto de entrada são reorganizados de tal foma que as classes próximas sejam posicionados umas perto das outras. Isso gera um mapa bi-dimensional denominado na literatura de \textit{mapa auto-organizável}. Este mapa é o análogo matemático mais fiel das áreas especializadas do córtex cerebral que são ilustradas pelo \textit{Homúnculo de Penfield}, \ref{homunculo}.
 
 \section{Redes com aprendizado não-supervisionado}
 

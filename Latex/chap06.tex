@@ -1,1 +1,11 @@
 \chapter{Conclusões}
+
+O teste de convergência da rede, Fig \ref{convergencia}, realizado durante a etapa de treinamento, indicou que o número de erros não iria diminuir após o milésimo ciclo de treinamento. Sendo o resultado, Fig. \ref{SOM}, deste teste usado como parâmetro para o número de repetições realizadas para os casos de identificação da rede. 
+
+Os diagramas de velocidades por densidade e o de velocidade por raio-gama, Fig. \ref{clusterT1}, Fig. \ref{clusterC1} e Fig. \ref{clusterC2}, apresentaram os agrupamentos mais bem separados. Portanto estas propriedades físicas (densidade, velocidade e raio-gama) tem uma importância relativa maior ,na classificação das litologias dos poços C$1$ e C$2$. 
+
+A questão de relativa importância das propriedades físicas, em dados de perfilagem de poços, já havia sido levantada anteriormente por \citet{Gloaguen2017} com fator de importância para a tomada de decisão da rede neuronal.
+
+A saída da rede aponta que o maior caso de erros ocorreram em uma única classe de rocha, a do embasamento. Esses erros fizeram com que conglomerados fossem classificados como rochas do embasamento, nos dois casos dos poços de classificação, o poço C$1$ e o poço C$2$.  Uma das razões pode ser o fato das misturas de conglomerado e embasamento serem finas demais para a rede conseguir realizar uma identificação de padrão \citep{Chakravarthy1999}. Ou pelo fato dos conjuntos de propriedades físicas da mistura de $20\%$ se aproximar das propriedades físicas que representam o litotipo embasamento. 
+
+O menor número de erros relativos encontrados, no poço C$2$, Fig. \ref{Class C2}, deve-se a escolha da alocação do furo, no perfil. O poço C$2$ localiza-se em um baixo estrutural, atingindo menos de $1$km do embasamento. Entretanto, o poço C$1$, Fig. \ref{Class C1}, encontra-se em um alto estrutural, divergindo do poço C$2$ e produzindo, consequentemente, os maiores erros relativos encontrados.    
