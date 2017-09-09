@@ -50,7 +50,7 @@ Na mesma forma, o agrupamento das classes de rochas é mais evidente, no gráfic
 
 \section{Treinamento}
 
-A etapa de treinamento consiste em um ajuste de pesos dos neurônios da rede. Nesta fase, é identificado o neurônio que tem os valores dos pesos mais parecidos com os parâmetros de entrada da rede.  
+A etapa de treinamento consiste em um ajuste de pesos dos neurônios da rede. Nesta fase, é identificado o neurônio que tem os valores dos pesos mais parecidos com os parâmetros de entrada da rede.  Por conseguinte, os diversos mapas são obtidos através dos sucessivos ciclos de treinamento ao longo do tempo. A Fig. \ref{SOM}(a), representa a organização da rede com apenas um ciclo de treinamento. Nesta imagem, a rede ainda não é capaz de identificar nenhuma litologia. Ao se aumentar o número de ciclos é perceptível que o ajuste dos pesos cria um conjunto de neurônios vencedores capazes de identificar as classes litológicas. Na quinta iteração, Fig. \ref{SOM}(b), as classes folhelho 2 e dolomita, por exemplo (cores mais azuis) ocupam a maior área do mapa. Já na milésima iteração, Fig. \ref{SOM}(d), a área azul é reduzida dando lugar as cores amarela e verde, que representam as subclasses de conglomerado e embasamento.
 
 \begin{figure}[H]
 \centering
@@ -66,7 +66,29 @@ A etapa de treinamento consiste em um ajuste de pesos dos neurônios da rede. Ne
 \label{SOM}
 \end{figure}
 
-Os mapas da Fig. \ref{SOM} apresentam as zonas do hiperplano especializadas em identificar as classes de rochas. O código numérico $1$ representa folhelho, $2$ dolomita, $3$ diabásio, $4$ conglomerado, $5$ embasamento, $6$ mistura conglomerado/embasamento $80\%$, $7$ mistura conglomerado/embasamento $60\%$, $8$ mistura conglomerado/embasamento $40\%$ e $9$ mistura conglomerado/embasamento $20\%$ .
+Os mapas da Fig. \ref{SOM} apresentam as zonas do hiperplano especializadas em identificar as classes de rochas. O código numérico $1$ representa folhelho, $2$ dolomita, $3$ diabásio, $4$ conglomerado, $5$ embasamento, $6$ mistura conglomerado/embasamento $80\%$, $7$ mistura conglomerado/embasamento $60\%$, $8$ mistura conglomerado/embasamento $40\%$ e $9$ mistura conglomerado/embasamento $20\%$ . A Tab. \ref{codigos} faz um paralelo entre o código numérico utilizado com \textit{output} da rede e as litologias do modelo.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c|c}
+		
+		Litologia                    & Código numérico \\ % Note a separação de col. e a quebra de linhas
+		\hline                                                             % para uma linha horizontal
+		Folhelho 2                 &  1\\
+		Dolomita  		            &  2 \\
+		Diabásio    	            &  3 \\
+		Conglomerado          &  4 \\
+		Conglomerado 80\% &  5  \\
+		Conglomerado 60\%&  6 \\
+		Conglomerado 40\%&  7\\
+		Conglomerado 20\%&  8 \\
+		Embasamento          &  9 \\
+	 % não é preciso quebrar a última linha
+		
+	\end{tabular}
+	\label{codigos}
+	\caption{Tabela de referência para conversão do padrão numérico em litologia.}
+\end{table}
 
 A Fig. \ref{convergencia} apresenta o teste de convergência da rede neuronal.
 
