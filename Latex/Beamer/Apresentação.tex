@@ -38,6 +38,34 @@
 \definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
 \definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
 \usepackage{tikz}%pacote para fazer fluxogramas
+\usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,decorations.pathreplacing,decorations.pathmorphing,shapes,matrix,shapes.symbols}
+\tikzset{
+			>=stealth',
+			punktchain/.style={
+				rectangle, 
+				rounded corners, 
+				% fill=black!10,
+				draw=black, very thick,
+				text width=10em, 
+				minimum height=1em, 
+				text centered, 
+				on chain},
+			line/.style={draw, thick, <-},
+			element/.style={
+				tape,
+				top color=white,
+				bottom color=blue!50!black!60!,
+				minimum width=8em,
+				draw=blue!40!black!90, very thick,
+				text width=1em, 
+				minimum height=3.5em, 
+				text centered, 
+				on chain},
+			every join/.style={->, thick,shorten >=0.1pt},
+			decoration={brace},
+			tuborg/.style={decorate},
+			tubnode/.style={midway, right=0.1pt},
+}
 \usepackage{verbatim}%
 
 
@@ -108,11 +136,97 @@
 
 \section{Introdução}
 
-\subsection{O que vem a ser uma rede neuronal?}
+\subsection{O que vem a ser uma rede neuronal artificial?}
+\begin{frame}
+	\frametitle{O que vem a ser uma rede neuronal artificial?}
+				\color{blue} É um sistema artificial que visa simular numericamente os processos do relizados pelo sistema nervoso central. 
+				
+				\begin{itemize}
+					\item Disponta como uma alternativa ao paradigma computacional de Von Neumann (instruções de programação sequencial);
+					\pause
+					\item Inspirada na neurociência, contudo não é realística em detalhe;
+					\pause
+					\item Métodos são derivados da Estatística Física;
+					\pause
+					\item Aplicações em ciência da computação, engenharia, geologia e geofísica. 
+				\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.2]{Imagens/neuronio.png} 
+		\caption{Ilustração esquemática de um neurônio.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.2]{Imagens/dendrito.png} 
+		\caption{Ilustração esquemática de um neurônio.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.2]{Imagens/nucleo.png} 
+		\caption{Ilustração esquemática de um neurônio.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.2]{Imagens/soma.png} 
+		\caption{Ilustração esquemática de um neurônio.}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.2]{Imagens/axonio.png} 
+		\caption{Ilustração esquemática de um neurônio.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.2]{Imagens/cone.png} 
+		\caption{Ilustração esquemática de um neurônio.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.2]{Imagens/terminal.png} 
+		\caption{Ilustração esquemática de um neurônio.}
+	\end{figure}
+\end{frame}
 
 \subsection{Um breve histórico}
 
+\begin{frame}
+	\frametitle{Um breve histórico}
+\end{frame}
+
 \subsection{Estado da arte}
+
+\begin{frame}
+	\frametitle{Estado da arte}
+\end{frame}
 
 \subsection{A rede de Kohonen}
 
@@ -145,36 +259,378 @@
 
 \subsection{Treinamento não-supervisionado}
 
-\subsection{Arquitetura da rede}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------------------------CONTEXTO GEOLÓGICO------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Contexto Geológico}
+
+\begin{frame}
+	\frametitle{Contexto Geológico}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.3]{Imagens/BaciaParana.jpg}
+		\caption{Mapa de localização da Bacia do Paraná. }
+		\label{mapa geologico}
+	\end{figure}
+\end{frame}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%---------------------------------MODELO------------------------------------
+%--------------------------METODOLOGIA------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Modelo}
+\section{Metodologia}
 
-\subsection{Fluxogramas}
+\begin{frame}
+	\frametitle{Criação dos dados sintéticos}
+\begin{footnotesize}
+	\begin{figure}[H]
+		\centering
 
-\subsection{Clusterização}
+		\begin{tikzpicture}
+		[node distance=.5cm,
+		start chain=going below,]
+		\node[punktchain, join]  {Modelo de Bacia};
+		\node[punktchain, join]   {Dados da Literatura};
+		\node[punktchain, join]   {Estimar erros das propriedades físicas para dada litologia};
+		\node[punktchain, join] {Definir taxa de amostragem};
+		\node[punktchain, join, ] {Gerar dados sintéticos contaminados com o erro gaussiano estimado};
+		
+		\end{tikzpicture}
+%		\caption{Fluxograma do programa de geração dos dados sintéticos}
+	\end{figure}
+	
+\end{footnotesize}	
+\end{frame}
 
-\subsection{Apresentação dos dados sintéticos}
+
+\begin{frame}
+	\frametitle{Programa de treinamento da rede}
+	\begin{scriptsize}
+		
+
+	\begin{figure}[H]
+		\centering
+	
+		\begin{tikzpicture}
+		[node distance=.3cm,
+		start chain=going below,]
+		\node[punktchain, join]  {Início};
+		\node[punktchain, join] (L1)  {Entrar com os dados do treinamento};
+		\node[punktchain, join]   {Atualizar o peso do neurônio vencedor};
+		\node[punktchain, join] (L2) {Fazer alteração nas vizinhanças do neurônio vencedor. Varre os dados de forma sequencial};
+		\node[punktchain, join, ] {Avaliar o nível de treinamento da rede};
+		\node[punktchain, join, ] {\color{red}Caso não esteja satisfatório volta-se para o Início e repete o processo de forma acumulativa};
+		\node[punktchain, join, ] {\color{blue}Caso esteja satisfatório é o decretado o final do treinamento};	
+		\end{tikzpicture}
+	\end{figure}
+\end{scriptsize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Programa de identificação da rede}
+	\begin{small}
+		
+		
+		\begin{figure}[H]
+			\centering
+			
+	\begin{tikzpicture}
+	[node distance=.8cm,
+	start chain=going below,]
+	\node[punktchain, join]  {Entrada do dado não classificado};
+	\node[punktchain, join] (L1)  {Determinação da distância entre os dados de cada neurônio };
+	\node[punktchain, join]   {Armazena as distâncias};
+	\node[punktchain, join] (L2) {Seleciona a menor distância};
+	\node[punktchain, join, ] {Classifica o dado};	
+	\end{tikzpicture}
+		\end{figure}
+	\end{small}
+\end{frame}
+
+
+
+
+
+\subsection{Objetivo}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%--------------------------TREINAMENTO DA REDE------------------------------
+%---------------------------NATUREZA DO DADO--------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Treinamento da rede}
+\section{Natureza do dado}
+
+\subsection{Modelo proposto para gerar os dados sintéticos}
+
+
+\begin{frame}
+	\frametitle{Modelo proposto}
+ \begin{scriptsize}
+	\begin{table}[H]
+		\centering
+		\caption{Compilação de propriedades físicas usdas para inferência de litologia \citep{Telford_1993}.}
+		\label{rock-properties1}
+			\begin{tabular}{@{}llllllllll@{}}
+				\toprule
+				Rocha         & Densidade ($g/cm^{3}$) & Raios-Gama ($Ci/g$)& Potencial-Espontâneo ($mV$)&   \\ \midrule
+				Conglomerado &     $2,50$  &       ---        &    ---        &      \\
+				Arenito  &    $2,35$      &       $2,00\leftrightarrow4,00$       &     ---       &      \\
+				Folhelho &   $2,40$       &      ---        &      ---      &    \\
+				Argilito &     $2,55$   &          ---     &       ---     &     \\
+				Siltito  &      $2,21$    &          ---     &       ---     &   \\
+				Dolomita &     $2,70$    &        $8,00$       &   ---         &       \\
+				Marga  &    $2,50$     &         ---      &    ---        &     \\
+				Basalto  &     $2,99$    &          $0,50$     &    ---       &      \\
+				Diabásio &    $2,90$    &         ---      &       ---     &     \\
+				Lava &     $2,61$    &      $0,33$         &      ---      &      \\
+				Granito &    $2,64$      &       $0,70\leftrightarrow4,80$        &      ---      &      \\
+				Gabro &    $3,03$     &       ---        &     ---       &       \\
+				Peridotito &   $3,15$    &      ---         &     ---       &      \\
+				Quartzito &    $2,60$    &        $5,00$      &     ---       &    \\
+				Xisto &   $2,64$    &         ---      &      ---      &    \\
+				Gnaisse &    $2,80$     &      ---         &    ---        &        \\
+				Serpentinito &    $2,78$     &   ---            &   ---     &        \\
+				Anfibolito &  $2,96$       &          ---     &       ---     &        \\
+				Eclogito &  $3,37$    &       ---        &      ---      &    \\
+				Mármore &   $2,75$       &      ---         &     ---       &      \\ \bottomrule
+			\end{tabular}
+	\end{table}
+\end{scriptsize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Modelo proposto}
+	\begin{scriptsize}
+		\begin{table}[H]
+			\centering
+			\caption{Compilação de propriedades físcas usadas na inferência de porosidade, permeabilidade. \cite{Telford_1993}.}
+			\label{rock-properties2}
+			\begin{tabular}{@{}llllllllll@{}}
+				\toprule
+				Rocha   & Resistividade ($\Omega/m$) &  Neutrão ($API$) & Velocidade ($km/s$)  &    \\ \midrule
+				Conglomerado &    $2\times10^{3}\leftrightarrow10^{4}$       &    ---           &     $1,80\leftrightarrow4,90$       &     \\
+				Arenito  &    $1\leftrightarrow6,4\times10^{8}$       &      ---         &     $4,00\leftrightarrow4,30$       &   \\
+				Folhelho &     $50\leftrightarrow10^{7}$      &      ---         &      $2,15\leftrightarrow3,30$      &   \\
+				Argilito &     $10\leftrightarrow8\times10^{2}$      &       ---        &     ---       &      \\
+				Siltito  &      $1\leftrightarrow100$     &      ---         &         $4,00\leftrightarrow6,20$    &         \\
+				Dolomita &   $3,5\times10^{2}\leftrightarrow5\times10^{3}$        &    ---           &      $5,70\leftrightarrow6,00$      &      \\
+				Marga  &     $3\leftrightarrow70$      &     ---          &     ---       &     \\
+				Basalto  &     $10\leftrightarrow1,3\times10^{7}$      &     ---          &     $ 5,00\leftrightarrow5.80$         &     \\
+				Diabásio &  $20\leftrightarrow5\times10^{7}$         &      ---         &     ---       &  \\
+				Granito Porfirítico (seco) &     $1,3\times10^{6}$     &       ---        &     $5,80$       &    \\
+				Granito Porfirítico (úmido) &  $4,5\times10^{3}$          &      ---         &     $ 5,00\leftrightarrow5.60$         &      \\
+				Gabro &   $10^{3}\leftrightarrow10^{6}$       &      ---         &      $ 5,00\leftrightarrow5.80$        &     \\
+				Peridotito (seco) &   $6,5\times10^{3}$        &    ---           &       ---     &    \\
+				Peridotito (úmido) &    $3\times10^{3}$       &      ---         &      ---      &  \\
+				Xisto &    $20\leftrightarrow10^{4}$       &        ---       &       ---     &   \\
+				Gnaisse (seco) & $3\times10^{6}$          &         ---      &     ---       &   \\
+				Gnaisse (úmido) &   $6,8\times10^{4}$        &       ---        &      ---      &   \\
+				Tufa (seca) &      $2\times10^{3}$     &      ---         &     $1,80\leftrightarrow3,50$       &     \\
+				Tufa (úmida) &     $10^{5}$      &     ---          &     ---       &      \\
+				Mármore &  $10^{2}\leftrightarrow2,5\times10^{8}$         &       ---        &      ---      &    \\ \bottomrule
+			\end{tabular}
+		\end{table}
+	\end{scriptsize}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Modelo proposto}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.35]{Imagens/Modelo.png}
+		\caption{Modelo Simplificado baseado em \cite{Sal2008}.}
+		\label{modelo}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Modelo proposto}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.37]{Imagens/PocoT1.png}
+		\caption{Dado de perfilagem sintético, T1. }
+		\label{T1}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Modelo proposto}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.37]{Imagens/PocoC1.png}
+		\caption{Dado de perfilagem sintético, C1.}
+		\label{C1}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Modelo proposto}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.37]{Imagens/PocoC2.png}
+		\caption{Dado de perfilagem sintético, C2.}
+		\label{C2}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Clusterização}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.3]{Imagens/cluterpocoT1.png}
+		\caption{Agrupamento de dados do poço T1.}
+		\label{clusterT1}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Clusterização}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.3]{Imagens/cluterpocoC1.png}
+		\caption{Agrupamento de dados do poço C1.}
+		\label{clusterC1}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Clusterização}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.3]{Imagens/cluterpocoC2.png}
+		\caption{Agrupamento de dados do poço C2.}
+		\label{clusterC2}
+	\end{figure} 
+\end{frame}
+
+
+
+\subsection{Dado Real}
+
+\begin{frame}
+	\frametitle{Localização dos poços}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.25]{Imagens/Pocos.jpg}
+		\caption{Localização dos poços de trabalho.}
+		\label{real}
+	\end{figure}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%---------------------------FUNCIONALIDADE DA REDE--------------------------
+%-------------------------RESULTADOS E DISCUSSÕES---------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Funcionalidade da rede}
+\section{Resultados e Discussões}
 
-\subsection{Erro}
+\subsection{Treinamento}
 
-\subsection{Gráfico de convergência}
+\begin{frame}
+	\frametitle{Treinamento}
+	\begin{figure}
+		\centering
+		\includegraphics[width=7.0cm]{Imagens/SOM1_2d.pdf}
+		\caption{Mapa auto-organizado (a) no primeiro ciclo de treinamento.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Treinamento}
+	\begin{figure}
+		\centering
+		\includegraphics[width=7.0cm]{Imagens/SOM5_2d.pdf}
+		\caption{Mapa auto-organizado (b) no quinto ciclo de treinamento.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Treinamento}
+	\begin{figure}
+		\centering
+		\includegraphics[width=7.0cm]{Imagens/SOM100_2d.pdf}
+		\caption{Mapa auto-organizado (c) no centésimo ciclo de treinamento.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Treinamento}
+	\begin{figure}
+		\centering
+		\includegraphics[width=7.0cm]{Imagens/SOM1000_2d.pdf}
+		\caption{Mapa auto-organizado (d) no milésimo ciclo de treinamento.}
+		\label{SOMd}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Treinamento}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.23]{Imagens/conv070917.png}
+		\caption{Teste de convergência da rede.}
+		\label{convergencia}
+	\end{figure} 
+\end{frame}
+
+\subsection{Identificação}
+
+\begin{frame}
+	\frametitle{Identificação}
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.45]{Imagens/IDC1.png}
+	\caption{Dado de saída da rede para o poço de classificação C1.}
+	\label{Class C1}
+\end{figure} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Identificação}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[scale=0.45]{Imagens/IDC2.png}
+		\caption{Dado de saída da rede para o poço de classificação C2.}
+		\label{Class C2}
+	\end{figure} 
+\end{frame}
+	
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------CONCLUSÕES---------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusões}
+
+\begin{frame}
+	\frametitle{Conclusões}
+\begin{small}
+	
+
+	\begin{itemize}
+		\item O teste de convergência da rede, Fig \ref{convergencia}, indicou que o número de erros não diminui após o milésimo ciclo de treinamento;
+		\pause
+		\item O resultado da Fig. \ref{SOMd} (d)  é mapa auto-organizado usado na identificação da rede cuja maior área de especialização está relacionada com o padrão sino;
+		\pause
+		\item As propriedades físicas de densidade, velocidade e raio-gama tem uma importância relativa maior, na classificação das litologias pela rede dos poços  C$1$ e C$2$ (diagramas de velocidades por densidade e o de velocidade por raio-gama), Fig. \ref{clusterT1}, Fig. \ref{clusterC1} e Fig. \ref{clusterC2};
+		\pause
+		\item A saída da rede aponta que o maior número de casos dos erros ocorreram em uma única classe de rocha, a do embasamento;
+		\pause
+		\item O menor número de erros relativos encontrados, no poço C$2$, Fig. \ref{Class C2}, deve-se a escolha da alocação do furo, no perfil e do po ço utilizado no treinamento. O poço C$2$ localiza-se em um baixo estrutural, atingindo menos de $1$km do embasamento. Entretanto, o poço C$1$, Fig. \ref{Class C1}, encontra-se em um alto estrutural, divergindo do poço C$2$ e produzindo, consequentemente, os maiores erros relativos encontrados. 
+	\end{itemize}
+\end{small}	
+\end{frame}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %-------------------------CRONOGRAMA---------------------------------------
@@ -182,11 +638,78 @@
 
 \section{Cronograma}		
 \begin{frame}
-\frametitle{Cronograma}
-\includegraphics[scale=0.7]{Imagens/Cronograma.pdf} 
+\begin{table}[H]
+
+	\flushleft
+	
+	% definindo o tamanho da fonte para small
+	% outros possíveis tamanhos: footnotesize, scriptsize
+	\begin{footnotesize}
+		
+		% redefinindo o espaçamento das colunas
+		\setlength{\tabcolsep}{1pt}
+		
+		% \cline é semelhante ao \hline, porém é possível indicar as colunas que terão essa a linha horizontal
+		% \multicolumn{10}{c|}{Meses} indica que dez colunas serão mescladas e a palavra Meses estará centralizada dentro delas.
+		\rotatebox{0}{
+			\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
+				& \multicolumn{24}{c|}{Meses}\\ \cline{2-25}
+				\raisebox{1.5ex}{Etapa} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & {\color{red}09} & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\ \hline
+				
+				Pesquisa na Literatura & X & X & X & X & X & X & X & X & {\color{red}X} & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X\\ \hline
+				Disciplinas & & & X & X & X & X & X & X &  {\color{red}X} & X & X & X & & & X & X & X & X & X & X & X & X & X & X \\ \hline
+				Formulação da Rede & & & & & & & & X &  {\color{red}X} & X & X & X & X & X & X & X & & & & & & & & \\ \hline
+				Treino & & & & & & & & & & & & & X & X & X & X & X & X & X & X & X & X & X & X \\ \hline
+				Resultado & & & & & & & & & & & & & & & & & & & & X & X & X & X & X \\ \hline
+				Artigo 1 & & & & & & & & & & & & & & & & & & & & & & & X & X \\ \hline
+				Artigo 2 & & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+				Tese & & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+			\end{tabular}
+		}
+	\end{footnotesize}
+	\caption{Cronograma das atividades previstas para o primeiro biênio. Em  {\color{red}vermelho} encontra-se o mês de setembro.}
+	\label{t1_cronograma}
+\end{table}
 
 \end{frame}
 
+	
+\begin{frame}
+\begin{table}[H]
+	\centering
+	
+	% definindo o tamanho da fonte para small
+	% outros possíveis tamanhos: footnotesize, scriptsize
+	\begin{footnotesize}
+		
+		% redefinindo o espaçamento das colunas
+		\setlength{\tabcolsep}{1pt}
+		
+		% \cline é semelhante ao \hline, porém é possível indicar as colunas que terão essa a linha horizontal
+		% \multicolumn{10}{c|}{Meses} indica que dez colunas serão mescladas e a palavra Meses estará centralizada dentro delas.
+		\rotatebox{0}{
+			\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
+				& \multicolumn{24}{c|}{Meses}\\ \cline{2-25}
+				\raisebox{1.5ex}{Etapa} & 25 & 26 & 27 & 28 & 29 & 30 & 31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 \\ \hline
+				
+				Pesquisa na Literatura & X & X & X & X & X & X & & & & & & & & & & & & & & & & & & \\ \hline
+				Disciplinas & & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+				Formulação da Rede & & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+				Treino & & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+				Resultado & & X & X & X & X & X & X & X & & & & & & & & & & & & & & & & \\ \hline
+				Artigo 1 & & X & X & X & & & & & & & & & & & & & & & & & & & & \\ \hline
+				Artigo 2 & & & & & X & X & X & X & X & & & & & & & & & & & & & & & \\ \hline
+				Tese & & & & & & & & & & & & & & & X & X & X & X & X & X & X & & & \\ \hline
+				
+			\end{tabular}
+		}
+	\end{footnotesize}
+	\caption{Cronograma das atividades previstas para o segundo biênio.}
+	\label{t2_cronograma}
+\end{table}
+
+\end{frame}	
+	
 	
 \section{Bibliografia}
 	\begin{frame}[allowframebreaks]{Bibliografia}
@@ -194,7 +717,7 @@
 	\beamertemplatetextbibitems
 	\tiny
 	\bibliographystyle{apalike}
-	\bibliography{referencias.bib}
+	\bibliography{references.bib}
 	\end{frame}
 
 \makeatother
