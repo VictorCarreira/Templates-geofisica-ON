@@ -12,6 +12,19 @@
 \usepackage[round]{natbib}
 \usepackage{hyperref} 
 \usepackage{smartdiagram}
+\usesmartdiagramlibrary{additions}
+\smartdiagramset{uniform color list=white!60!black for 6 items,
+	back arrow disabled=true, module minimum width=2cm,
+	module minimum height=2cm,
+	module x sep=3cm,
+	text width=2cm,
+	additions={
+		additional item offset=0.5cm,
+		additional item width=2cm,
+		additional item height=2cm,
+		additional item text width=3cm
+	}
+}
 \usepackage{graphicx} % Required for including images
 \usepackage{graphics}
 \graphicspath{{figures/}} % Location of the graphics files
@@ -219,13 +232,136 @@
 \subsection{Um breve histórico}
 
 \begin{frame}
-	\frametitle{Um breve histórico}
+	\frametitle{Um breve histórico...}
+	\pause
+	\begin{small}
+			\smartdiagram[flow diagram:horizontal]{\textcolor{blue}{\cite{McCulloch1943}}}
+	\end{small}
+	\begin{itemize}
+	\item Definem o a função do neurônio numérico cuja a resposta dependia da entrada dos dados da rede e dos pesos utilizados e a denominam como Perceptron.
+	\end{itemize}	
 \end{frame}
+
+
+\begin{frame}
+	\frametitle{Um breve histórico...}
+	\begin{small}
+		\smartdiagram[flow diagram:horizontal]{\citet{McCulloch1943}, \textcolor{blue}{\citet{Rosenblatt1962}}}
+	\end{small}
+	\begin{itemize}
+		\item Definem teoria de convergência do Perceptron onde ele prova que modelos de neurônios possuem propriedades similares ao cérebro humano.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Um breve histórico...}
+	\begin{small}
+		\smartdiagram[flow diagram:horizontal]{\citet{McCulloch1943}, \citet{Rosenblatt1962}, \textcolor{blue}{\cite{Minsky1969}}}
+	\end{small}
+	\begin{itemize}
+		\item Demonstraram que Perceptrons somente resolvem uma classe muito limitada de problemas que podem	ser linearizados.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Um breve histórico...}
+	\begin{small}
+		\smartdiagram[flow diagram:horizontal]{\citet{McCulloch1943}, \citet{Rosenblatt1962}, \cite{Minsky1969}, \textcolor{blue}{\cite{Hopfield1982}}}
+	\end{small}
+	\begin{itemize}
+		\item Apresenta um modelo cuja as propriedades coletivas produzem um conteúdo de memória classificável através das partes dos dados analisados.  
+		%\item The collective properties of this model produce a content-addressable memory which correctly yields an entire	memory from any subpart of sufficient size.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Um breve histórico...}
+	\begin{small}
+		\smartdiagram[flow diagram:horizontal]{\citet{Rosenblatt1962}, \cite{Minsky1969}, \cite{Hopfield1982}, \textcolor{blue}{\cite{Kohonen1989}}}
+	\end{small}
+	\begin{itemize}
+		\item Cria uma ferramenta para a análise exploratória de dados geoespaciais multivariados.  
+		%\item The collective properties of this model produce a content-addressable memory which correctly yields an entire	memory from any subpart of sufficient size.
+	\end{itemize}
+\end{frame}
+
 
 \subsection{Estado da arte}
 
 \begin{frame}
 	\frametitle{Estado da arte}
+	\framesubtitle{na geofísica}
+	\begin{itemize}
+		\item \textcolor{red}{entre 1988 e 1994} o foco era em descobrir o que as redes neuronais podem fazer com diferentes tipos de dados. E como preparar esses dados para a utilização na rede e como analisá-los; 
+		\pause
+		\item \textcolor{red}{entre 1995 até o presente} aplicação se torna mais específica na área da caracterização de reservatórios integrando o resultado da RNA com outros resultados.
+	\end{itemize}
+
+	\begin{flushleft}
+	\citep{Poulton2002}
+	\end{flushleft}
+	
+
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Estado da arte}
+	\framesubtitle{na perfilagem de poços}
+	\begin{small}
+	\smartdiagram[flow diagram:horizontal]{\textcolor{blue}{\cite{Zhang1999}}}
+	\end{small}
+	\begin{itemize}
+	\item Algoritmos baseados em derivadas nas curvas de log não identificam camadas muito finas, ou ruído.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Estado da arte}
+	\framesubtitle{na perfilagem de poços}
+	\begin{small}
+		\smartdiagram[flow diagram:horizontal]{\cite{Zhang1999},\textcolor{blue}{\cite{Chakravarthy1999}}}
+	\end{small}
+	\pause
+	\begin{itemize}
+		\item consegue através do uso da função radial localizar os limites de camadas em alta definição em dados de log de indução (HDIL).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Estado da arte}
+	\framesubtitle{na perfilagem de poços}
+	\begin{small}
+		\smartdiagram[flow diagram:horizontal]{\cite{Zhang1999},\cite{Chakravarthy1999}, \textcolor{blue}{\cite{Benaouda1999}}}
+	\end{small}
+	%\pause
+	\begin{itemize}
+		\item consegue classificar tipos litológicos em poços parcialmente desmoronados.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Estado da arte}
+	\framesubtitle{na perfilagem de poços}
+	\begin{small}
+		\smartdiagram[flow diagram:horizontal]{\cite{Zhang1999},\cite{Chakravarthy1999}, \cite{Benaouda1999}, \textcolor{blue}{\cite{Saljooghi2014}}}
+	\end{small}
+	%\pause
+	\begin{itemize}
+		\item topo e base de camadas que podem ser associadas com mudanças das propriedades petrofísicas. 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Estado da arte}
+	\framesubtitle{na perfilagem de poços}
+	\begin{small}
+		\smartdiagram[flow diagram:horizontal]{\cite{Chakravarthy1999}, \cite{Benaouda1999},\cite{Saljooghi2014}, \textcolor{blue}{\cite{Gloaguen2017}} }
+	\end{small}
+	%\pause
+	\begin{itemize}
+		\item Chama a atenção para importância relativa das propriedades físicas, em dados de perfilagem de ouro, para a tomada de decisão da rede neuronal. 
+	\end{itemize}
 \end{frame}
 
 \subsection{A rede de Kohonen}
