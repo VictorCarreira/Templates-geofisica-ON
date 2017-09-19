@@ -187,7 +187,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 \begin{frame}
 	\frametitle{Introdução}
 	\transboxin%efeito de transição	
-	\begin{block}{Por que utilizar o redes neuronais?}
+	\begin{block}{Por que utilizar as redes neuronais?}
 		\begin{itemize}
 			\pause
 			\item Estratégia computacional para a solução de problemas cujo reconhecimento de padrões seja o foco principal \citep{MacKay2005};
@@ -203,16 +203,14 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 \begin{frame}
 	\frametitle{O que vem a ser uma rede neuronal artificial?}
 				\pause
-				\color{blue} É um sistema artificial que visa simular numericamente os processos do relizados pelo sistema nervoso central. 
+				\color{blue} É um sistema artificial que visa simular numericamente os processos do realizados pelo sistema nervoso central para a solução de um problema matemático sem que se conheça a sua formulação matemática (funcional geofísico). 
 				\pause
 				\begin{itemize}
-					\item Disponta como uma alternativa ao paradigma computacional de Von Neumann (instruções de programação sequencial);
+					\item Desponta como uma alternativa ao paradigma computacional de Von Neumann (instruções de programação sequencial);
 					\pause
 					\item Inspirada na neurociência, contudo não é realística em detalhe;
 					\pause
-					\item Métodos são derivados da Física Estatística;
-					\pause
-					\item Aplicações em ciência da computação, engenharia, geologia e geofísica. 
+					\item Aplicações em medicina ciência da computação, engenharia, geologia e geofísica. 
 				\end{itemize}
 \end{frame}
 
@@ -320,7 +318,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 		\smartdiagram[flow diagram:horizontal]{\citet{McCulloch1943}, \citet{Rosenblatt1962}, \cite{Minsky1969}, \textcolor{blue}{\cite{Hopfield1982}}}
 	\end{small}
 	\begin{itemize}
-		\item Cria um modelo de memória auto-associativa com a habilidade de armazenar e depois recuperar um certo conjunto de padrões no dado.  
+		\item Resolve problemas não-lineares criando um  modelo de memória auto-associativa com a habilidade de armazenar e depois recuperar um certo conjunto de padrões do dado.  
 		%\item The collective properties of this model produce a content-addressable memory which correctly yields an entire	memory from any subpart of sufficient size.
 	\end{itemize}
 \end{frame}
@@ -331,7 +329,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 		\smartdiagram[flow diagram:horizontal]{\citet{Rosenblatt1962}, \cite{Minsky1969}, \cite{Hopfield1982}, \textcolor{blue}{\cite{Kohonen1989}}}
 	\end{small}
 	\begin{itemize}
-		\item Resolve problemas não-lineares criando uma ferramenta para a análise exploratória de dados geoespaciais multivariados.  
+		\item Cria uma ferramenta eficiente para a identificação de padrões multivariados.  
 		%\item The collective properties of this model produce a content-addressable memory which correctly yields an entire	memory from any subpart of sufficient size.
 	\end{itemize}
 \end{frame}
@@ -343,9 +341,9 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 	\frametitle{Estado da arte}
 	\framesubtitle{na geofísica}
 	\begin{itemize}
-		\item \textcolor{red}{entre 1988 e 1994} o foco era em descobrir o que as redes neuronais podem fazer com diferentes tipos de dados. E como preparar esses dados para a utilização na rede e como analisá-los; 
+		\item Primeira fase \textcolor{red}{entre 1988 e 1994}: descobrir o que as redes neuronais podem fazer. 
 		\pause
-		\item \textcolor{red}{entre 1995 até o presente} aplicação se torna mais específica na área da caracterização de reservatórios integrando o resultado da RNA com outros resultados.
+		\item Segunda fase \textcolor{red}{entre 1995 até o presente}:integrar o resultado da RNA com outros resultados.
 	\end{itemize}
 
 	\begin{flushleft}
@@ -411,7 +409,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 	\end{small}
 	%\pause
 	\begin{itemize}
-		\item Chama a atenção para importância relativa das propriedades físicas, em dados de perfilagem de ouro, para a tomada de decisão da rede neuronal. 
+		\item Chama a atenção para importância relativa das propriedades físicas no \textit{output} da rede neuronal. 
 	\end{itemize}
 \end{frame}
 
@@ -449,12 +447,12 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 	
 \begin{figure}[H]
 		\flushleft
-		\includegraphics[scale=0.15]{Imagens/toro.png}
+		\includegraphics[scale=0.2]{Imagens/toro.png}
 		\label{toro}
 \end{figure}
 \begin{figure}[H]
 	\flushright
-		\includegraphics[scale=0.4]{Imagens/hiperplano.png}
+		\includegraphics[scale=0.35]{Imagens/hiperplano.png}
 	\label{hiperplano}
 \end{figure}
 
@@ -463,7 +461,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 \begin{frame}
 	\frametitle{Treinamento}
 
-\begin{block}{Dado o vetor propriedades ...}
+\begin{block}{Vetor de propriedades}
  \begin{displaymath}
  \mathbf{X}=\left(\begin{array}{r}
 x_{1}\\
@@ -479,9 +477,9 @@ x_{m}
 
 \begin{frame}
 	\frametitle{Treinamento}
-	\begin{block}{Cômputo da norma euclideana entre \textbf{X} e o  $w_{i,j}$}
+	\begin{block}{Escolha do neurônio vencedor}
 		 \begin{eqnarray}
-		 d(t)= \sqrt{\sum^{n}_{i=1}[x(t)-w_{i,j}(t)]^{2}} \hspace{1cm}  (j = {1,..,m}) 
+		 d(t)= \sqrt{\sum^{n}_{i=1}[x(t)-w_{i,j}(t)]^{2}} \hspace{1cm}  (j = {1,..,m}) \nonumber
 		 \label{euclidiana}
 		 \end{eqnarray}
 		 Onde:
@@ -498,9 +496,9 @@ x_{m}
 
 \begin{frame}
 	\frametitle{Treinamento}
-	\begin{block}{Cálculo do neurônio vencedor}
+	\begin{block}{Atualização do neurônio vencedor}
 	\begin{equation}
-	w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] 
+	w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 	\label{ajuste de pesos}
 	\end{equation}
 	\end{block}
@@ -517,21 +515,36 @@ x_{m}
 	\frametitle{Treinamento}
 	\begin{block}{Aprendizado}
 		\begin{equation}
-		\eta(t)=\eta(0)    ( 1 -  \frac{t}{T}  )  
+		\eta(t)=\eta(0)    ( 1 -  \frac{t}{T}  )  \nonumber
 		\label{aprendizado}
 		\end{equation}
 	\end{block}
 	\begin{itemize}
 		\pause
-		\item $T$, número de ciclos por treinamento,
+		\item $T$, número de ciclos do treinamento,
 		\pause
-		\item $t$, número de iterações
+		\item $t$, número de iterações.
 		\pause
 		\item ajusta-se $t=t+1$ e retorna para o início do processo até que $t=T$ \citep{YANG2009,Yan2014}.
 	\end{itemize}
 \end{frame}
 
-
+\begin{frame}
+	\frametitle{Treinamento}
+	\begin{block}{Atualização das vizinhanças}
+		\begin{equation}
+		w_{v}(t+1)=w_{i,j}(t)+\eta(t)_{v}[x(t)-w_{i,j}(t)] \nonumber
+		\label{ajuste de pesos}
+		\end{equation}
+	\end{block}
+	\begin{itemize}
+		\pause
+		\item $w_{v}$, Peso do neurônio vizinho. %Ele se realaciona com todos os vizinhos de $w_{i,j}$
+		\pause
+		\item $\eta(t)_{v}$, tacha de aprendizado dos vizinhos% <$\eta(t)$
+		\pause
+	\end{itemize}
+\end{frame}
 
 \subsection{Treinamento não-supervisionado}
 
@@ -544,7 +557,7 @@ x_{m}
 		\pause
 		\item Indicado para os casos aonde se tem agrupamento de dados;
 		\pause
-		\item Inspira-se no funcionamento do córtex cerebal \citep{Schott1993}.
+		\item Inspira-se no funcionamento do córtex cerebral \citep{Schott1993}.
 	\end{itemize}
 	
 		\begin{figure}[H]
@@ -576,140 +589,6 @@ x_{m}
 	\end{itemize}			
 \end{frame}
 
-%\begin{frame}
-%	\frametitle{Contexto Geológico}
-%	\transboxin%efeito de transição	
-%	\begin{columns}
-%		
-%		\begin{column}{0.6\textwidth}
-%			Três grupos de lineamentos: NW-SE (transamazônico), 
-%			NE-SW (brasiliano) e
-%			E-W (paralelos às fraturas de fundo oceânico)
-%			\cite{zalan_p._v._tectonica_1987,milani_orogenias_1998,milani_outline_1999,borghi_2002}
-%		\end{column}
-%		
-%		\begin{column}{0.4\textwidth}
-%			\begin{figure}
-%				\includegraphics[scale=0.38]{Imagens/lineamentos.png}
-%			\end{figure}
-%		\end{column}
-%	\end{columns}
-%\end{frame}	
-
-%%########## 2 ###########
-%\begin{frame}
-%	\frametitle{Contexto Geológico}
-%	\begin{columns}
-%		
-%		\begin{column}{0.6\textwidth}
-%			Três grupos de lineamentos: \textcolor{red}{NW-SE} (transamazônico), 
-%			NE-SW (brasiliano) e
-%			E-W (paralelos às fraturas de fundo oceânico)
-%			\cite{zalan_p._v._tectonica_1987,milani_orogenias_1998,milani_outline_1999,borghi_2002}
-%		\end{column}
-%		
-%		\begin{column}{0.4\textwidth}
-%			\begin{figure}
-%				\includegraphics[scale=0.25]{Imagens/NW-SE.png}
-%			\end{figure}
-%		\end{column}
-%	\end{columns}
-%\end{frame}
-%
-%%########## 3 ###########
-%\begin{frame}
-%	\frametitle{Contexto Geológico}
-%	\begin{columns}
-%		
-%		\begin{column}{0.6\textwidth}
-%			Três grupos de lineamentos: NW-SE (transamazônico), 
-%			\textcolor{green}{NE-SW} (brasiliano) e
-%			E-W (paralelos às fraturas de fundo oceânico)
-%			\cite{zalan_p._v._tectonica_1987,milani_orogenias_1998,milani_outline_1999,borghi_2002}
-%		\end{column}
-%		
-%		\begin{column}{0.4\textwidth}
-%			\begin{figure}
-%				\includegraphics[scale=0.25]{Imagens/NE-SW.png}
-%			\end{figure}
-%		\end{column}
-%	\end{columns}
-%\end{frame}
-%
-%%########## 4 ###########
-%\begin{frame}
-%	\frametitle{Contexto Geológico}
-%	\begin{columns}
-%		
-%		\begin{column}{0.6\textwidth}
-%			Três grupos de lineamentos: NW-SE (transamazônico), 
-%			NE-SW (brasiliano) e
-%			\textcolor{blue}{E-W} (paralelos às fraturas de fundo oceânico)
-%			\cite{zalan_p._v._tectonica_1987,milani_orogenias_1998,milani_outline_1999,borghi_2002}
-%		\end{column}
-%		
-%		\begin{column}{0.4\textwidth}
-%			\begin{figure}
-%				\includegraphics[scale=0.25]{Imagens/E-W.png}
-%			\end{figure}
-%		\end{column}
-%	\end{columns}
-%\end{frame}	
-%
-%%-------------------------------Estrutura do Embasamento-----------------------------------
-%%########## 1 ###########
-%%\begin{frame}
-%%	\frametitle{Contexto Geológico}
-%%	\begin{columns}
-%%		
-%%		\begin{column}{0.6\textwidth}
-%%			Núcleos cratônicos associados às faixas móveis brasilianas, tais como o cráton do Guaxupé, Rio Paranapanema, Triângulo mineiro, Pelotas, Rio Apa e às faixas móveis Apiaí, Paraguai-araguaia, Uruaçu, Tijucas e Rio Paraná.
-%%			\cite{Quintas_1995,Vidotti_1998,milani_orogenias_1998,hawkesworth_tectonic_2000,rosa_integracao_2009}
-%%		\end{column}
-%%		
-%%		\begin{column}{0.4\textwidth}
-%%			\begin{figure}
-%%				\includegraphics[scale=0.28]{Imagens/cratonsefaixasmoveis.png}
-%%			\end{figure}
-%%		\end{column}
-%%	\end{columns}
-%%\end{frame}
-%
-%%########## 2 ###########
-%\begin{frame}
-%	\frametitle{Contexto Geológico}
-%	\begin{columns}
-%		
-%		\begin{column}{0.6\textwidth}
-%			\textcolor{red}{Núcleos cratônicos} associados às faixas móveis brasilianas, tais como o cráton do \textcolor{red}{Guaxupé}, \textcolor{red}{Rio Paranapanema}, \textcolor{red}{Triângulo mineiro}, \textcolor{red}{Pelotas}, \textcolor{red}{Rio Apa} e às faixas móveis Apiaí, Paraguai-araguaia,  Uruaçu, Tijucas e Rio Paraná.
-%			\cite{Quintas_1995,Vidotti_1998,milani_orogenias_1998,hawkesworth_tectonic_2000,rosa_integracao_2009}
-%		\end{column}
-%		
-%		\begin{column}{0.4\textwidth}
-%			\begin{figure}
-%				\includegraphics[scale=0.28]{Imagens/cratonsdestaque.png}
-%			\end{figure}
-%		\end{column}
-%	\end{columns}
-%\end{frame}	
-%
-%%########## 3 ###########
-%\begin{frame}
-%	\frametitle{Contexto Geológico}
-%	\begin{columns}
-%		
-%		\begin{column}{0.6\textwidth}
-%			Núcleos cratônicos associados às \textcolor{blue}{faixas móveis} brasilianas, tais como o cráton do Guaxupé, Rio Paranapanema, Triângulo mineiro, Pelotas, Rio Apa e às faixas móveis \textcolor{blue}{Apiaí}, \textcolor{blue}{Paraguai-araguaia}, \textcolor{blue}{Uruaçu}, \textcolor{blue}{Tijucas} e \textcolor{blue}{Rio Paraná}.
-%			\cite{Quintas_1995,Vidotti_1998,milani_orogenias_1998,hawkesworth_tectonic_2000,rosa_integracao_2009}
-%		\end{column}
-%		
-%		\begin{column}{0.4\textwidth}
-%			\begin{figure}
-%				\includegraphics[scale=0.28]{Imagens/faixasmoveisdestaqueazul.png}
-%			\end{figure}
-%		\end{column}
-%	\end{columns}
-%\end{frame}	
 %-----------------------------------Estratigrafia----------------------------------
 
 %########## 1 ###########
@@ -969,7 +848,7 @@ x_{m}
 %		\node[punktchain, join, ] {\color{red}Caso não esteja satisfatório volta-se para o Início e repete o processo de forma acumulativa};
 %		\node[punktchain, join, ] {\color{blue}Caso esteja satisfatório é o decretado o final do treinamento};	
 %		\end{tikzpicture}
-			\includegraphics[scale=0.4]{Imagens/treinamento.png}
+			\includegraphics[scale=0.35]{Imagens/treinamento.png}
 	\end{figure}
 \end{scriptsize}
 \end{frame}
@@ -984,17 +863,17 @@ x_{m}
 		\begin{figure}[H]
 			\centering
 			
-%	\begin{tikzpicture}
-%	[node distance=.8cm,
-%	start chain=going below,]
-%	\node[punktchain, join]  {Entrada do dado não classificado};
-%	\node[punktchain, join] (L1)  {Determinação da distância entre os dados de cada neurônio };
-%	\node[punktchain, join]   {Armazena as distâncias};
-%	\node[punktchain, join] (L2) {Seleciona a menor distância};
-%	\node[punktchain, join, ] {Classifica o dado};	
-%	\end{tikzpicture}
+	\begin{tikzpicture}
+	[node distance=.8cm,
+	start chain=going below,]
+	\node[punktchain, join]  {Entrada do dado não classificado};
+	\node[punktchain, join] (L1)  {Determina a distância entre o dado e os valores dos neurônios da rede};
+	\node[punktchain, join]   {Armazena as distâncias};
+	\node[punktchain, join] (L2) {Seleciona a menor distância};
+	\node[punktchain, join, ] {Classifica o dado};	
+	\end{tikzpicture}
 	
-		\includegraphics[scale=0.55]{Imagens/classificacao.png}
+%		\includegraphics[scale=0.55]{Imagens/classificacao.png}
 		\end{figure}
 	\end{small}
 \end{frame}
@@ -1011,75 +890,75 @@ x_{m}
 
 \section{Modelo proposto}
 
-\begin{frame}
-	\frametitle{Modelo proposto}
- \begin{scriptsize}
-	\begin{table}[H]
-		\centering
-		\caption{Compilação de propriedades físicas usadas para inferência de litologia \citep{Telford_1993}.}
-		\label{rock-properties1}
-			\begin{tabular}{@{}llllllllll@{}}
-				\toprule
-				Rocha         & Densidade ($g/cm^{3}$) & Raios-Gama ($Ci/g$)& Potencial-Espontâneo ($mV$)&   \\ \midrule
-				Conglomerado &     $2,50$  &       ---        &    ---        &      \\
-				Arenito  &    $2,35$      &       $2,00\leftrightarrow4,00$       &     ---       &      \\
-				Folhelho &   $2,40$       &      ---        &      ---      &    \\
-				Argilito &     $2,55$   &          ---     &       ---     &     \\
-				Siltito  &      $2,21$    &          ---     &       ---     &   \\
-				Dolomita &     $2,70$    &        $8,00$       &   ---         &       \\
-				Marga  &    $2,50$     &         ---      &    ---        &     \\
-				Basalto  &     $2,99$    &          $0,50$     &    ---       &      \\
-				Diabásio &    $2,90$    &         ---      &       ---     &     \\
-				Lava &     $2,61$    &      $0,33$         &      ---      &      \\
-				Granito &    $2,64$      &       $0,70\leftrightarrow4,80$        &      ---      &      \\
-				Gabro &    $3,03$     &       ---        &     ---       &       \\
-				Peridotito &   $3,15$    &      ---         &     ---       &      \\
-				Quartzito &    $2,60$    &        $5,00$      &     ---       &    \\
-				Xisto &   $2,64$    &         ---      &      ---      &    \\
-				Gnaisse &    $2,80$     &      ---         &    ---        &        \\
-				Serpentinito &    $2,78$     &   ---            &   ---     &        \\
-				Anfibolito &  $2,96$       &          ---     &       ---     &        \\
-				Eclogito &  $3,37$    &       ---        &      ---      &    \\
-				Mármore &   $2,75$       &      ---         &     ---       &      \\ \bottomrule
-			\end{tabular}
-	\end{table}
-\end{scriptsize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Modelo proposto}
-	\begin{scriptsize}
-		\begin{table}[H]
-			\centering
-			\caption{Compilação de propriedades físcas usadas na inferência de porosidade, permeabilidade. \cite{Telford_1993}.}
-			\label{rock-properties2}
-			\begin{tabular}{@{}llllllllll@{}}
-				\toprule
-				Rocha   & Resistividade ($\Omega/m$) &  Neutrão ($API$) & Velocidade ($km/s$)  &    \\ \midrule
-				Conglomerado &    $2\times10^{3}\leftrightarrow10^{4}$       &    ---           &     $1,80\leftrightarrow4,90$       &     \\
-				Arenito  &    $1\leftrightarrow6,4\times10^{8}$       &      ---         &     $4,00\leftrightarrow4,30$       &   \\
-				Folhelho &     $50\leftrightarrow10^{7}$      &      ---         &      $2,15\leftrightarrow3,30$      &   \\
-				Argilito &     $10\leftrightarrow8\times10^{2}$      &       ---        &     ---       &      \\
-				Siltito  &      $1\leftrightarrow100$     &      ---         &         $4,00\leftrightarrow6,20$    &         \\
-				Dolomita &   $3,5\times10^{2}\leftrightarrow5\times10^{3}$        &    ---           &      $5,70\leftrightarrow6,00$      &      \\
-				Marga  &     $3\leftrightarrow70$      &     ---          &     ---       &     \\
-				Basalto  &     $10\leftrightarrow1,3\times10^{7}$      &     ---          &     $ 5,00\leftrightarrow5.80$         &     \\
-				Diabásio &  $20\leftrightarrow5\times10^{7}$         &      ---         &     ---       &  \\
-				Granito Porfirítico (seco) &     $1,3\times10^{6}$     &       ---        &     $5,80$       &    \\
-				Granito Porfirítico (úmido) &  $4,5\times10^{3}$          &      ---         &     $ 5,00\leftrightarrow5.60$         &      \\
-				Gabro &   $10^{3}\leftrightarrow10^{6}$       &      ---         &      $ 5,00\leftrightarrow5.80$        &     \\
-				Peridotito (seco) &   $6,5\times10^{3}$        &    ---           &       ---     &    \\
-				Peridotito (úmido) &    $3\times10^{3}$       &      ---         &      ---      &  \\
-				Xisto &    $20\leftrightarrow10^{4}$       &        ---       &       ---     &   \\
-				Gnaisse (seco) & $3\times10^{6}$          &         ---      &     ---       &   \\
-				Gnaisse (úmido) &   $6,8\times10^{4}$        &       ---        &      ---      &   \\
-				Tufa (seca) &      $2\times10^{3}$     &      ---         &     $1,80\leftrightarrow3,50$       &     \\
-				Tufa (úmida) &     $10^{5}$      &     ---          &     ---       &      \\
-				Mármore &  $10^{2}\leftrightarrow2,5\times10^{8}$         &       ---        &      ---      &    \\ \bottomrule
-			\end{tabular}
-		\end{table}
-	\end{scriptsize}
-\end{frame}
+%\begin{frame}
+%	\frametitle{Modelo proposto}
+% \begin{scriptsize}
+%	\begin{table}[H]
+%		\centering
+%		\caption{Compilação de propriedades físicas usadas para inferência de litologia \citep{Telford_1993}.}
+%		\label{rock-properties1}
+%			\begin{tabular}{@{}llllllllll@{}}
+%				\toprule
+%				Rocha         & Densidade ($g/cm^{3}$) & Raios-Gama ($Ci/g$)& Potencial-Espontâneo ($mV$)&   \\ \midrule
+%				Conglomerado &     $2,50$  &       ---        &    ---        &      \\
+%				Arenito  &    $2,35$      &       $2,00\leftrightarrow4,00$       &     ---       &      \\
+%				Folhelho &   $2,40$       &      ---        &      ---      &    \\
+%				Argilito &     $2,55$   &          ---     &       ---     &     \\
+%				Siltito  &      $2,21$    &          ---     &       ---     &   \\
+%				Dolomita &     $2,70$    &        $8,00$       &   ---         &       \\
+%				Marga  &    $2,50$     &         ---      &    ---        &     \\
+%				Basalto  &     $2,99$    &          $0,50$     &    ---       &      \\
+%				Diabásio &    $2,90$    &         ---      &       ---     &     \\
+%				Lava &     $2,61$    &      $0,33$         &      ---      &      \\
+%				Granito &    $2,64$      &       $0,70\leftrightarrow4,80$        &      ---      &      \\
+%				Gabro &    $3,03$     &       ---        &     ---       &       \\
+%				Peridotito &   $3,15$    &      ---         &     ---       &      \\
+%				Quartzito &    $2,60$    &        $5,00$      &     ---       &    \\
+%				Xisto &   $2,64$    &         ---      &      ---      &    \\
+%				Gnaisse &    $2,80$     &      ---         &    ---        &        \\
+%				Serpentinito &    $2,78$     &   ---            &   ---     &        \\
+%				Anfibolito &  $2,96$       &          ---     &       ---     &        \\
+%				Eclogito &  $3,37$    &       ---        &      ---      &    \\
+%				Mármore &   $2,75$       &      ---         &     ---       &      \\ \bottomrule
+%			\end{tabular}
+%	\end{table}
+%\end{scriptsize}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{Modelo proposto}
+%	\begin{scriptsize}
+%		\begin{table}[H]
+%			\centering
+%			\caption{Compilação de propriedades físcas usadas na inferência de porosidade, permeabilidade. \cite{Telford_1993}.}
+%			\label{rock-properties2}
+%			\begin{tabular}{@{}llllllllll@{}}
+%				\toprule
+%				Rocha   & Resistividade ($\Omega/m$) &  Neutrão ($API$) & Velocidade ($km/s$)  &    \\ \midrule
+%				Conglomerado &    $2\times10^{3}\leftrightarrow10^{4}$       &    ---           &     $1,80\leftrightarrow4,90$       &     \\
+%				Arenito  &    $1\leftrightarrow6,4\times10^{8}$       &      ---         &     $4,00\leftrightarrow4,30$       &   \\
+%				Folhelho &     $50\leftrightarrow10^{7}$      &      ---         &      $2,15\leftrightarrow3,30$      &   \\
+%				Argilito &     $10\leftrightarrow8\times10^{2}$      &       ---        &     ---       &      \\
+%				Siltito  &      $1\leftrightarrow100$     &      ---         &         $4,00\leftrightarrow6,20$    &         \\
+%				Dolomita &   $3,5\times10^{2}\leftrightarrow5\times10^{3}$        &    ---           &      $5,70\leftrightarrow6,00$      &      \\
+%				Marga  &     $3\leftrightarrow70$      &     ---          &     ---       &     \\
+%				Basalto  &     $10\leftrightarrow1,3\times10^{7}$      &     ---          &     $ 5,00\leftrightarrow5.80$         &     \\
+%				Diabásio &  $20\leftrightarrow5\times10^{7}$         &      ---         &     ---       &  \\
+%				Granito Porfirítico (seco) &     $1,3\times10^{6}$     &       ---        &     $5,80$       &    \\
+%				Granito Porfirítico (úmido) &  $4,5\times10^{3}$          &      ---         &     $ 5,00\leftrightarrow5.60$         &      \\
+%				Gabro &   $10^{3}\leftrightarrow10^{6}$       &      ---         &      $ 5,00\leftrightarrow5.80$        &     \\
+%				Peridotito (seco) &   $6,5\times10^{3}$        &    ---           &       ---     &    \\
+%				Peridotito (úmido) &    $3\times10^{3}$       &      ---         &      ---      &  \\
+%				Xisto &    $20\leftrightarrow10^{4}$       &        ---       &       ---     &   \\
+%				Gnaisse (seco) & $3\times10^{6}$          &         ---      &     ---       &   \\
+%				Gnaisse (úmido) &   $6,8\times10^{4}$        &       ---        &      ---      &   \\
+%				Tufa (seca) &      $2\times10^{3}$     &      ---         &     $1,80\leftrightarrow3,50$       &     \\
+%				Tufa (úmida) &     $10^{5}$      &     ---          &     ---       &      \\
+%				Mármore &  $10^{2}\leftrightarrow2,5\times10^{8}$         &       ---        &      ---      &    \\ \bottomrule
+%			\end{tabular}
+%		\end{table}
+%	\end{scriptsize}
+%\end{frame}
 
 \begin{frame}
 	\frametitle{Parâmetros do modelo}
@@ -1105,10 +984,9 @@ x_{m}
 	\frametitle{Modelo prosposto}
 	\framesubtitle{Descrição do modelo}
 	\begin{itemize}
-		\pause 
 		\item modelo realístico com variação de $4$ propriedades físicas;
 		\pause
-		\item contaminação com $5\%$ruído gaussiano;
+		\item contaminação com $5\%$ ruído gaussiano;
 		\pause
 		\item taxa de amostragem $0,1$ dado/metro;
 		\pause
@@ -1190,7 +1068,7 @@ x_{m}
 	\frametitle{Clusterização do poço T1}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.3]{Imagens/dolomita.png}
+		\includegraphics[scale=0.4]{Imagens/dolomita.png}
 		\caption{Agrupamento de dados do poço T1.}
 
 	\end{figure} 
@@ -1291,7 +1169,7 @@ x_{m}
 	\frametitle{Clusterização do poço C2}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.3]{Imagens/folhelhoC1.png}
+		\includegraphics[scale=0.4]{Imagens/folhelhoC2.png}
 		\caption{Agrupamento de dados do poço C2.}
 	\end{figure} 
 \end{frame}
@@ -1300,7 +1178,7 @@ x_{m}
 	\frametitle{Clusterização do poço C2}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.3]{Imagens/dolomitaC2.png}
+		\includegraphics[scale=0.4]{Imagens/dolomitaC2.png}
 		\caption{Agrupamento de dados do poço C2.}
 	\end{figure} 
 \end{frame}
