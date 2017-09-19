@@ -1,5 +1,7 @@
 %\documentclass[aspectratio=169]{beamer} %para apresentações em widescreen
 \documentclass[10pt]{beamer} %para apresentação normal
+%\setbeamertemplate{frame foot}{\tdclock{}}
+%\usepackage{tdclock}
 \logo{\includegraphics[height=1cm]{Imagens/logon.jpg}\vspace{220pt}}
 \newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
 \usetheme{default}
@@ -119,7 +121,8 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 %-------------------------------------------------------------------------------------------
 
 \begin{document}
-
+%	\initclock
+%	\tdclock
 \bgroup
 \makeatletter
 \setbeamertemplate{footline}
@@ -156,21 +159,22 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 \subsection{O que vem a ser uma rede neuronal artificial?}
 \begin{frame}
 	\frametitle{O que vem a ser uma rede neuronal artificial?}
+				\pause
 				\color{blue} É um sistema artificial que visa simular numericamente os processos do relizados pelo sistema nervoso central. 
-				
+				\pause
 				\begin{itemize}
 					\item Disponta como uma alternativa ao paradigma computacional de Von Neumann (instruções de programação sequencial);
 					\pause
 					\item Inspirada na neurociência, contudo não é realística em detalhe;
 					\pause
-					\item Métodos são derivados da Estatística Física;
+					\item Métodos são derivados da Física Estatística;
 					\pause
 					\item Aplicações em ciência da computação, engenharia, geologia e geofísica. 
 				\end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$  neurônios}
 	\begin{figure}
 		\centering
 		\includegraphics[scale=0.2]{Imagens/neuronio.png} 
@@ -179,7 +183,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 \end{frame}
 
 \begin{frame}
-	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   neurônios}
 	\begin{figure}
 		\centering
 		\includegraphics[scale=0.2]{Imagens/dendrito.png} 
@@ -188,7 +192,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 \end{frame}
 
 \begin{frame}
-	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   neurônios}
 	\begin{figure}
 		\centering
 		\includegraphics[scale=0.2]{Imagens/nucleo.png} 
@@ -197,7 +201,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 \end{frame}
 
 \begin{frame}
-	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   neurônios}
 	\begin{figure}
 		\centering
 		\includegraphics[scale=0.2]{Imagens/soma.png} 
@@ -207,7 +211,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 
 
 \begin{frame}
-	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   neurônios}
 	\begin{figure}
 		\centering
 		\includegraphics[scale=0.2]{Imagens/axonio.png} 
@@ -216,7 +220,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 \end{frame}
 
 \begin{frame}
-	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   de vários tipos}
+	\frametitle{O cérebro humano contém cerca de \\ aproximadamente $10^{11}$   neurônios}
 	\begin{figure}
 		\centering
 		\includegraphics[scale=0.2]{Imagens/cone.png} 
@@ -326,7 +330,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 	\begin{small}
 		\smartdiagram[flow diagram:horizontal]{\cite{Zhang1999},\textcolor{blue}{\cite{Chakravarthy1999}}}
 	\end{small}
-	\pause
+	%\pause
 	\begin{itemize}
 		\item consegue através do uso da função radial localizar os limites de camadas em alta definição em dados de log de indução (HDIL).
 	\end{itemize}
@@ -399,16 +403,22 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
 
 \begin{frame}
 	\frametitle{A geometria da rede}
+	
 \begin{figure}[H]
-	\centering
-		\includegraphics[scale=0.5]{Imagens/hiperplano.png}
+		\flushleft
+		\includegraphics[scale=0.15]{Imagens/toro.png}
+		\label{toro}
+\end{figure}
+\begin{figure}[H]
+	\flushright
+		\includegraphics[scale=0.4]{Imagens/hiperplano.png}
 	\label{hiperplano}
 \end{figure}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{O treinamento}
+	\frametitle{Treinamento}
 
 \begin{block}{Dado o vetor propriedades ...}
  \begin{displaymath}
@@ -425,35 +435,55 @@ x_{m}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Distância entre clusters}
+	\frametitle{Treinamento}
 	\begin{block}{Cômputo da norma euclideana entre \textbf{X} e o  $w_{i,j}$}
 		 \begin{eqnarray}
 		 d(t)= \sqrt{\sum^{n}_{i=1}[x(t)-w_{i,j}(t)]^{2}} \hspace{1cm}  (j = {1,..,m}) 
 		 \label{euclidiana}
 		 \end{eqnarray}
+		 Onde:
 	\end{block}
+	\begin{itemize}
+		\pause
+		\item $d(t)$, distância 
+		\pause
+		\item $x(t)$, vetor de propriedades
+		\pause
+		\item $w_{i,j}(t)$, matriz de pesos
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Neurônio vencedor}
+	\frametitle{Treinamento}
 	\begin{block}{Cálculo do neurônio vencedor}
 	\begin{equation}
-	w_{i,j}(t+1)=w_{i,j}(t)+n(t)[x(t)-w_{i,j}] 
+	w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] 
 	\label{ajuste de pesos}
 	\end{equation}
 	\end{block}
+		\begin{itemize}
+			\pause
+			\item $w_{i,j}(t+1)$, matriz de pesos atualizada
+			\pause
+			\item $\eta(t)$,  taxa de aprendizado
+		\end{itemize}
 \end{frame}
 
 
 \begin{frame}
-	\frametitle{Aprendizado}
-	\begin{block}{A atualização da taxa de aprendizado}
+	\frametitle{Treinamento}
+	\begin{block}{Aprendizado}
 		\begin{equation}
 		\eta(t)=\eta(0)    ( 1 -  \frac{t}{T}  )  
 		\label{aprendizado}
 		\end{equation}
 	\end{block}
 	\begin{itemize}
+		\pause
+		\item $T$, número de ciclos por treinamento,
+		\pause
+		\item $t$, número de iterações
+		\pause
 		\item ajusta-se $t=t+1$ e retorna para o início do processo até que $t=T$ \citep{YANG2009,Yan2014}.
 	\end{itemize}
 \end{frame}
@@ -465,7 +495,7 @@ x_{m}
 \begin{frame}
 	\frametitle{Treinamento não-supervisionado}
 	\begin{itemize}
-		\item  Insere-se na rede os atribuitos de entrada;
+		\item  Insere-se na rede os atributos de entrada;
 		\pause
 		\item Os valores de saída são definidos pela própria rede;
 		\pause
@@ -488,7 +518,7 @@ x_{m}
 %---------------------------------CONTEXTO GEOLÓGICO------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Contexto Geológico}
+\section{Contexto Geológico e Localização}
 
 \begin{frame}
 	\frametitle{Contexto Geológico}
@@ -500,16 +530,46 @@ x_{m}
 	\end{figure}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Localização dos poços}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.25]{Imagens/Pocos.jpg}
+		\caption{Localização dos poços de trabalho.}
+		\label{real}
+	\end{figure}
+\end{frame}
 
+\begin{frame}
+	\frametitle{Dado}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.12]{Imagens/poco.png}
+		\caption{Dado de perfilagem }
+	\end{figure}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%--------------------------METODOLOGIA------------------------------
+%-------------------------OBJETIVO------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivo}
+
+\begin{frame}
+	\frametitle{Objetivo}
+	\pause
+	\begin{itemize}
+		\item Desenvolver uma rede neuronal artificial otimizada que classifique tipos litológicos distintos;
+		\pause
+		\item  Aplicar a rede na identificação de rochas da Bacia do Paraná. 
+	\end{itemize}
+\end{frame}
+
 
 \section{Metodologia}
 
+\subsection{Dados Sintéticos}
 \begin{frame}
-	\frametitle{Criação dos dados sintéticos}
+	\frametitle{Fluxigrama de criação dos dados sintéticos}
 \begin{footnotesize}
 	\begin{figure}[H]
 		\centering
@@ -530,47 +590,52 @@ x_{m}
 \end{footnotesize}	
 \end{frame}
 
-
+\subsection{Treinamento da rede}
 \begin{frame}
-	\frametitle{Programa de treinamento da rede}
+	\frametitle{Fluxigrama de treinamento}
 	\begin{scriptsize}
 		
 
 	\begin{figure}[H]
 		\centering
 	
-		\begin{tikzpicture}
-		[node distance=.3cm,
-		start chain=going below,]
-		\node[punktchain, join]  {Início};
-		\node[punktchain, join] (L1)  {Entrar com os dados do treinamento};
-		\node[punktchain, join]   {Atualizar o peso do neurônio vencedor};
-		\node[punktchain, join] (L2) {Fazer alteração nas vizinhanças do neurônio vencedor. Varre os dados de forma sequencial};
-		\node[punktchain, join, ] {Avaliar o nível de treinamento da rede};
-		\node[punktchain, join, ] {\color{red}Caso não esteja satisfatório volta-se para o Início e repete o processo de forma acumulativa};
-		\node[punktchain, join, ] {\color{blue}Caso esteja satisfatório é o decretado o final do treinamento};	
-		\end{tikzpicture}
+%		\begin{tikzpicture}
+%		[node distance=.3cm,
+%		start chain=going below,]
+%		\node[punktchain, join]  {Início};
+%		\node[punktchain, join] (L1)  {Entrar com os dados do treinamento};
+%		\node[punktchain, join]   {Atualizar o peso do neurônio vencedor};
+%		\node[punktchain, join] (L2) {Fazer alteração nas vizinhanças do neurônio vencedor. Varre os dados de forma sequencial};
+%		\node[punktchain, join, ] {Avaliar o nível de treinamento da rede};
+%		\node[punktchain, join, ] {\color{red}Caso não esteja satisfatório volta-se para o Início e repete o processo de forma acumulativa};
+%		\node[punktchain, join, ] {\color{blue}Caso esteja satisfatório é o decretado o final do treinamento};	
+%		\end{tikzpicture}
+			\includegraphics[scale=0.4]{Imagens/treinamento.png}
 	\end{figure}
 \end{scriptsize}
 \end{frame}
 
+
+\subsection{Classificação da rede}
 \begin{frame}
-	\frametitle{Programa de identificação da rede}
+	\frametitle{Fluxograma de classificação}
 	\begin{small}
 		
 		
 		\begin{figure}[H]
 			\centering
 			
-	\begin{tikzpicture}
-	[node distance=.8cm,
-	start chain=going below,]
-	\node[punktchain, join]  {Entrada do dado não classificado};
-	\node[punktchain, join] (L1)  {Determinação da distância entre os dados de cada neurônio };
-	\node[punktchain, join]   {Armazena as distâncias};
-	\node[punktchain, join] (L2) {Seleciona a menor distância};
-	\node[punktchain, join, ] {Classifica o dado};	
-	\end{tikzpicture}
+%	\begin{tikzpicture}
+%	[node distance=.8cm,
+%	start chain=going below,]
+%	\node[punktchain, join]  {Entrada do dado não classificado};
+%	\node[punktchain, join] (L1)  {Determinação da distância entre os dados de cada neurônio };
+%	\node[punktchain, join]   {Armazena as distâncias};
+%	\node[punktchain, join] (L2) {Seleciona a menor distância};
+%	\node[punktchain, join, ] {Classifica o dado};	
+%	\end{tikzpicture}
+	
+		\includegraphics[scale=0.55]{Imagens/classificacao.png}
 		\end{figure}
 	\end{small}
 \end{frame}
@@ -579,16 +644,28 @@ x_{m}
 
 
 
-\subsection{Objetivo}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %---------------------------NATUREZA DO DADO--------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Natureza do dado}
+\section{Modelo proposto}
 
-\subsection{Modelo proposto para gerar os dados sintéticos}
 
+\begin{frame}
+	\frametitle{Modelo prosposto}
+	\framesubtitle{Descrição do modelo}
+	\begin{itemize}
+		\pause 
+		\item modelo realístico com variação de $4$ propriedades físicas;
+		\pause
+		\item taxa de amostragem $0,1$ dado/metro;
+		\pause
+		\item dados de propriedades previamente publicados.
+	\end{itemize}
+	
+\end{frame}
 
 \begin{frame}
 	\frametitle{Modelo proposto}
@@ -703,7 +780,7 @@ x_{m}
 	\end{figure}
 \end{frame}
 
-
+\subsection{Clusterização}
 \begin{frame}
 	\frametitle{Clusterização}
 	\begin{figure}[H]
@@ -736,17 +813,7 @@ x_{m}
 
 
 
-\subsection{Dado Real}
 
-\begin{frame}
-	\frametitle{Localização dos poços}
-	\begin{figure}[H]
-		\centering
-			\includegraphics[scale=0.25]{Imagens/Pocos.jpg}
-		\caption{Localização dos poços de trabalho.}
-		\label{real}
-	\end{figure}
-\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -840,15 +907,15 @@ x_{m}
 	
 
 	\begin{itemize}
-		\item O teste de convergência da rede, Fig \ref{convergencia}, indicou que o número de erros não diminui após o milésimo ciclo de treinamento;
+		\item O teste de convergência da rede indicou que o número de erros não diminui após o milésimo ciclo de treinamento;
 		\pause
-		\item O resultado da Fig. \ref{SOMd} (d)  é mapa auto-organizado usado na identificação da rede cuja maior área de especialização está relacionada com o padrão sino;
+		\item A maior área de especialização do mapa auto-organizado usado na identificação da rede está relacionada com o padrão sino;
 		\pause
-		\item As propriedades físicas de densidade, velocidade e raio-gama tem uma importância relativa maior, na classificação das litologias pela rede dos poços  C$1$ e C$2$ (diagramas de velocidades por densidade e o de velocidade por raio-gama), Fig. \ref{clusterT1}, Fig. \ref{clusterC1} e Fig. \ref{clusterC2};
+		\item As propriedades físicas de densidade e raio-gama tem uma importância relativa maior, na classificação das litologias pela rede dos poços  C$1$ e C$2$ (diagramas de velocidades por densidade e o de velocidade por raio-gama);
 		\pause
 		\item A saída da rede aponta que o maior número de casos dos erros ocorreram em uma única classe de rocha, a do embasamento;
 		\pause
-		\item O menor número de erros relativos encontrados, no poço C$2$, Fig. \ref{Class C2}, deve-se a escolha da alocação do furo, no perfil e do po ço utilizado no treinamento. O poço C$2$ localiza-se em um baixo estrutural, atingindo menos de $1$km do embasamento. Entretanto, o poço C$1$, Fig. \ref{Class C1}, encontra-se em um alto estrutural, divergindo do poço C$2$ e produzindo, consequentemente, os maiores erros relativos encontrados. 
+		\item O menor número de erros relativos encontrados, no poço C$2$ deve-se a escolha da alocação do furo, no perfil e do poço utilizado no treinamento. O poço C$2$ localiza-se em um baixo estrutural, atingindo menos de $1$km do embasamento. Entretanto, o poço C$1$ encontra-se em um alto estrutural, divergindo do poço C$2$ e produzindo, consequentemente, os maiores erros relativos encontrados. 
 	\end{itemize}
 \end{small}	
 \end{frame}
